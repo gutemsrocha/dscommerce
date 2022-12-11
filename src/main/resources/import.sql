@@ -63,7 +63,8 @@ INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZON
 INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-08-03T14:20:00Z', 0, 1);
 
 INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1, 1, 2, 90.5);
-INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1, 3, 1, 1250.0);
+INSERT INTO tb_order_item (order_id, product_id, quantity
+, price) VALUES (1, 3, 1, 1250.0);
 INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (2, 3, 1, 1250.0);
 INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (3, 1, 1, 90.5);
 
