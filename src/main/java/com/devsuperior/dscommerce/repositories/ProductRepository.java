@@ -8,10 +8,9 @@ import org.springframework.data.jpa.repository.Query;
 import com.devsuperior.dscommerce.entities.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
-	
-	@Query("SELECT obj FROM Product obj " 
-			+ "WHERE UPPER(obj.name) "
-			+ "LIKE UPPER(CONCAT('%', :name, '%')) ")
+
+	@Query("SELECT obj FROM Product obj " + "WHERE UPPER(obj.name) " 
+	+ "LIKE UPPER(CONCAT('%', :name, '%')) ")
 	Page<Product> searchByName(String name, Pageable pageable);
 
 }

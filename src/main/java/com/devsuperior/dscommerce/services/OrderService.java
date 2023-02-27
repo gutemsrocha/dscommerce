@@ -26,13 +26,13 @@ public class OrderService {
 
 	@Autowired
 	private ProductRepository productRepository;
-	
+
 	@Autowired
 	private OrderItemRepository orderItemRepository;
 
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private AuthService authService;
 
@@ -40,8 +40,8 @@ public class OrderService {
 	public OrderDTO findById(Long id) {
 		Order order = repository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado"));
-		authService.validateSelfOrAdmin(order.getClient().getId());//Teste se o usuário que está logado
-		//é ADMIN ou o DONO do pedido.		
+		authService.validateSelfOrAdmin(order.getClient().getId());// Teste se o usuário que está logado
+		// é ADMIN ou o DONO do pedido.
 		return new OrderDTO(order);
 	}
 
@@ -112,7 +112,7 @@ public class OrderService {
 
 		repository.save(order);
 		orderItemRepository.saveAll(order.getItems());
-		
+
 		return new OrderDTO(order);
 	}
 

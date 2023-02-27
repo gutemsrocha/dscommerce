@@ -22,5 +22,4 @@ public class CategoryService {
 		return result.stream().map(x -> new CategoryDTO(x)).toList();
 	}
 
-	
 }
